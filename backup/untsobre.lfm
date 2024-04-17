@@ -1,0 +1,90 @@
+object sobreF: TsobreF
+  Left = 748
+  Height = 657
+  Top = 180
+  Width = 607
+  Caption = 'Sobre'
+  ClientHeight = 657
+  ClientWidth = 607
+  Color = clGray
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '2.2.6.0'
+  object Label1: TLabel
+    Left = 185
+    Height = 32
+    Top = 39
+    Width = 215
+    Align = alCustom
+    Anchors = [akTop, akLeft, akRight]
+    Caption = 'Projeto orçamento'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -24
+    Font.Name = 'Segoe UI Emoji'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    OnClick = Label1Click
+  end
+  object Label2: TLabel
+    Left = 92
+    Height = 260
+    Top = 90
+    Width = 415
+    Align = alCustom
+    Anchors = [akTop, akLeft, akRight]
+    Caption = 'Este foi um projeto desenvolvido durante o curso'#13#10'SABER-TI disponibilizado pela empresa ACCION.'#13#10'O projeto tem o objetivo de concretizar todo o'#13#10'aprendizado adiquirido durante o curso.'#13#10#13#10'O projeto se consiste no gerenciamento de '#13#10'orçamentos sendo possível cadastrar, alterar'#13#10'informações, consultar e deletar tanto de cliente, '#13#10'produto, categoria de produto, usuários e '#13#10'orçamentos.'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -19
+    Font.Name = 'Segoe UI Emoji'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 92
+    Height = 182
+    Top = 443
+    Width = 337
+    Caption = 'As tecnologias usadas no projeto foram:'#13#10#13#10'- ObjectPascal'#13#10'- Lazarus 2.2.6'#13#10'- PostgresSQL '#13#10'- BDeaver'#13#10
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -19
+    Font.Name = 'Segoe UI Emoji'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 223
+    Height = 32
+    Top = 377
+    Width = 138
+    Caption = 'Tecnologias'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -24
+    Font.Name = 'Segoe UI Emoji'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object bitBtnSair: TBitBtn
+    Left = 503
+    Height = 30
+    Top = 611
+    Width = 75
+    Caption = 'Sair'
+    Color = clLime
+    OnClick = bitBtnSairClick
+    TabOrder = 0
+  end
+end

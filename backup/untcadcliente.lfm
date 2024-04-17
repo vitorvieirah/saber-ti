@@ -1,0 +1,269 @@
+inherited cadClienteF: TcadClienteF
+  Left = 624
+  Top = 303
+  Caption = 'Cadastro de cliente'
+  OnClose = FormClose
+  OnShow = FormShow
+  inherited pgcModelo: TPageControl
+    Height = 529
+    Top = 0
+    ActivePage = tbsCadastro
+    TabIndex = 1
+    OnChange = pgcModeloChange
+    inherited tbsPesquisa: TTabSheet
+      ClientHeight = 501
+      inherited DBGrid1: TDBGrid
+        Left = -2
+        Height = 365
+        Top = 41
+        Width = 652
+        Columns = <        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'ID'
+            FieldName = 'clienteid'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'Tipo'
+            FieldName = 'tipo_cliente'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'CPF/CNPJ'
+            FieldName = 'cpf_cnpj_cliente'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'Nome'
+            FieldName = 'nome_cliente'
+          end>
+        DataSource = dsPrincipal
+        OnDblClick = DBGrid1DblClick
+      end
+      inherited pnlPesquiaBot: TPanel
+        Top = 409
+        inherited bitBtnNovo: TBitBtn
+          OnClick = bitBtnNovoClick
+        end
+        inherited bitBtnSair: TBitBtn
+          OnClick = bitBtnSairClick
+        end
+        object bitBtnEditar: TBitBtn[2]
+          Left = 120
+          Height = 30
+          Top = 10
+          Width = 75
+          Anchors = [akTop, akLeft, akRight]
+          Caption = 'Editar'
+          OnClick = bitBtnEditarClick
+          TabOrder = 2
+        end
+      end
+      inherited pnlPesquiaTop: TPanel
+        Height = 45
+        ClientHeight = 45
+        inherited edtPesquisa1: TEdit
+          Top = 12
+        end
+        inherited spBtnPesquisar: TSpeedButton
+          Top = 12
+          OnClick = spBtnPesquisarClick
+        end
+        object RadioGroup1: TRadioGroup[2]
+          Left = 175
+          Height = 40
+          Top = -5
+          Width = 293
+          AutoFill = True
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 5
+          ClientHeight = 20
+          ClientWidth = 289
+          Columns = 5
+          Items.Strings = (
+            'ID'
+            'CPF/CNPJ'
+            'Nome'
+            'Tipo'
+            'Todos'
+          )
+          TabOrder = 1
+        end
+      end
+    end
+    inherited tbsCadastro: TTabSheet
+      ClientHeight = 501
+      OnContextPopup = tbsCadastroContextPopup
+      inherited pnlCadastroBot: TPanel
+        Top = 409
+        inherited bitBtnGravar: TBitBtn
+          OnClick = bitBtnGravarClick
+        end
+        inherited bitBtnExcluir: TBitBtn
+          Left = 113
+          OnClick = bitBtnExcluirClick
+        end
+        inherited bitBtnCancelar: TBitBtn
+          OnClick = bitBtnCancelarClick
+        end
+      end
+      object dbEdtID: TDBEdit[1]
+        Left = 49
+        Height = 23
+        Top = 62
+        Width = 80
+        DataField = 'clienteid'
+        DataSource = dsPrincipal
+        Alignment = taRightJustify
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object Label1: TLabel[2]
+        Left = 54
+        Height = 15
+        Top = 37
+        Width = 11
+        Caption = 'ID'
+        ParentColor = False
+      end
+      object dbCbTipoCliente: TDBComboBox[3]
+        Left = 267
+        Height = 23
+        Top = 144
+        Width = 100
+        DataField = 'tipo_cliente'
+        DataSource = dsPrincipal
+        ItemHeight = 15
+        Items.Strings = (
+          'F'
+          'J'
+        )
+        MaxLength = 0
+        TabOrder = 2
+      end
+      object Label2: TLabel[4]
+        Left = 267
+        Height = 15
+        Top = 118
+        Width = 61
+        Caption = 'Tipo cliente'
+        ParentColor = False
+      end
+      object dbEdtCpfCnpj: TDBEdit[5]
+        Left = 49
+        Height = 23
+        Top = 144
+        Width = 80
+        DataField = 'cpf_cnpj_cliente'
+        DataSource = dsPrincipal
+        MaxLength = 18
+        TabOrder = 3
+      end
+      object Label3: TLabel[6]
+        Left = 54
+        Height = 15
+        Top = 123
+        Width = 53
+        Caption = 'CPF/CNPJ'
+        ParentColor = False
+      end
+      object dbEdtNome: TDBEdit[7]
+        Left = 49
+        Height = 23
+        Top = 228
+        Width = 80
+        DataField = 'nome_cliente'
+        DataSource = dsPrincipal
+        MaxLength = 100
+        TabOrder = 4
+      end
+      object Label4: TLabel[8]
+        Left = 54
+        Height = 15
+        Top = 207
+        Width = 33
+        Caption = 'Nome'
+        ParentColor = False
+      end
+      object DBNavigator1: TDBNavigator[9]
+        Left = 192
+        Height = 25
+        Top = 60
+        Width = 241
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 25
+        ClientWidth = 241
+        DataSource = dsPrincipal
+        Options = []
+        TabOrder = 5
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      end
+    end
+  end
+  inherited dsPrincipal: TDataSource
+    DataSet = qryCadCliente
+    Left = 513
+    Top = 194
+  end
+  object qryCadCliente: TZQuery[2]
+    Connection = DataModule1.ZConnection1
+    OnNewRecord = qryCadClienteNewRecord
+    SQL.Strings = (
+      'select * from cliente'
+    )
+    Params = <>
+    Left = 513
+    Top = 121
+    object qryCadClienteclienteid: TLongintField
+      FieldKind = fkData
+      FieldName = 'clienteid'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryCadClientetipo_cliente: TStringField
+      FieldKind = fkData
+      FieldName = 'tipo_cliente'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1
+    end
+    object qryCadClientecpf_cnpj_cliente: TStringField
+      FieldKind = fkData
+      FieldName = 'cpf_cnpj_cliente'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 18
+    end
+    object qryCadClientenome_cliente: TStringField
+      FieldKind = fkData
+      FieldName = 'nome_cliente'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 100
+    end
+  end
+end

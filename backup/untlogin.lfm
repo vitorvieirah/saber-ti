@@ -1,0 +1,103 @@
+object loginF: TloginF
+  Left = 871
+  Height = 314
+  Top = 352
+  Width = 417
+  Caption = 'Login'
+  ClientHeight = 0
+  ClientWidth = 0
+  LCLVersion = '2.2.6.0'
+  object Label1: TLabel
+    Left = 159
+    Height = 15
+    Top = 45
+    Width = 40
+    Caption = 'Usuário'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 159
+    Height = 15
+    Top = 111
+    Width = 32
+    Caption = 'Senha'
+    ParentColor = False
+  end
+  object BitBtn1: TBitBtn
+    Left = 159
+    Height = 30
+    Top = 198
+    Width = 80
+    Caption = 'Entrar'
+    OnClick = BitBtn1Click
+    TabOrder = 0
+  end
+  object Edit1: TEdit
+    Left = 159
+    Height = 23
+    Top = 66
+    Width = 71
+    TabOrder = 1
+  end
+  object Edit2: TEdit
+    Left = 159
+    Height = 23
+    Top = 130
+    Width = 70
+    TabOrder = 2
+  end
+  object dsUsuarios: TDataSource
+    DataSet = qryUsuarios
+    Left = 321
+    Top = 52
+  end
+  object qryUsuarios: TZQuery
+    Connection = DataModule1.ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from usuarios'
+    )
+    Params = <>
+    Left = 321
+    Top = 142
+    object qryUsuariosid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryUsuariosusuario: TStringField
+      FieldKind = fkData
+      FieldName = 'usuario'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryUsuariosnome_completo: TStringField
+      FieldKind = fkData
+      FieldName = 'nome_completo'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryUsuariossenha: TStringField
+      FieldKind = fkData
+      FieldName = 'senha'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+  end
+end

@@ -1,0 +1,160 @@
+object modeloCadF: TmodeloCadF
+  Left = 374
+  Height = 481
+  Top = 330
+  Width = 653
+  Caption = 'Modelo'
+  ClientHeight = 481
+  ClientWidth = 653
+  OnClose = FormClose
+  LCLVersion = '2.2.6.0'
+  object pgcModelo: TPageControl
+    Left = 0
+    Height = 524
+    Top = 3
+    Width = 699
+    ActivePage = tbsPesquisa
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    TabIndex = 0
+    TabOrder = 0
+    object tbsPesquisa: TTabSheet
+      Caption = 'Pesquisa'
+      ClientHeight = 496
+      ClientWidth = 691
+      object DBGrid1: TDBGrid
+        Left = -5
+        Height = 355
+        Top = 51
+        Width = 655
+        Color = clWindow
+        Columns = <>
+        TabOrder = 0
+      end
+      object pnlPesquiaBot: TPanel
+        Left = -5
+        Height = 50
+        Top = 404
+        Width = 654
+        Anchors = [akLeft, akRight, akBottom]
+        ClientHeight = 50
+        ClientWidth = 654
+        TabOrder = 1
+        object bitBtnNovo: TBitBtn
+          Left = 23
+          Height = 30
+          Top = 10
+          Width = 75
+          Caption = 'Novo'
+          TabOrder = 0
+        end
+        object bitBtnSair: TBitBtn
+          Left = 559
+          Height = 30
+          Top = 10
+          Width = 75
+          Anchors = [akTop, akRight]
+          Caption = 'Sair'
+          TabOrder = 1
+        end
+      end
+      object pnlPesquiaTop: TPanel
+        Left = -5
+        Height = 54
+        Top = -2
+        Width = 654
+        Anchors = [akTop, akLeft, akRight]
+        ClientHeight = 54
+        ClientWidth = 654
+        TabOrder = 2
+        object edtPesquisa1: TEdit
+          Left = 23
+          Height = 23
+          Top = 18
+          Width = 94
+          TabOrder = 0
+        end
+        object spBtnPesquisar: TSpeedButton
+          Left = 133
+          Height = 22
+          Top = 19
+          Width = 29
+          Glyph.Data = {
+            66030000424D6603000000000000360000002800000010000000110000000100
+            18000000000030030000C30E0000C30E00000000000000000000BFBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF
+            BFBFBFBF000000BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF000000000000000000BFBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF0000
+            00000000000000BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBFBF000000000000000000BFBFBFBFBFBFBFBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF0000000000000000
+            00BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF7F7F7F0000000000000000007F
+            7F7FBFBFBF00FFFF7F7F7F000000BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF
+            0000007F7F7F7F7F7F7F7F7F7F7F7F7F7F7F00000000000000FFFFBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBFBFBFBF0000007F7F7FFFFFFFBFBFBFFFFFFFBFBFBFFF
+            FFFF7F7F7F000000BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF7F7F7F7F7F7F
+            FFFFFFBFBFBFFFFFFF0000FFFFFFFFBFBFBFFFFFFF7F7F7F7F7F7FBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBF0000007F7F7FBFBFBFFFFFFFBFBFBF0000FFBFBFBFFF
+            FFFFBFBFBF7F7F7F000000BFBFBFBFBFBFBFBFBFBFBFBFBFBFBF0000007F7F7F
+            FFFFFF0000FF0000FF0000FF0000FF0000FFFFFFFF7F7F7F000000BFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBF0000007F7F7FBFBFBFFFFFFFBFBFBF0000FFBFBFBFFF
+            FFFFBFBFBF7F7F7F000000BFBFBFBFBFBFBFBFBFBFBFBFBFBFBF7F7F7F7F7F7F
+            FFFFFFBFBFBFFFFFFF0000FFFFFFFFBFBFBFFFFFFF7F7F7F7F7F7FBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBFBFBFBF0000007F7F7FFFFFFFBFBFBFFFFFFFBFBFBFFF
+            FFFF7F7F7F000000BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF
+            0000007F7F7F7F7F7F7F7F7F7F7F7F7F7F7F000000BFBFBFBFBFBFBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF7F7F7F0000000000000000007F
+            7F7FBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF
+            BFBFBFBFBFBFBFBFBFBF
+          }
+        end
+      end
+    end
+    object tbsCadastro: TTabSheet
+      Caption = 'Cadastro'
+      ClientHeight = 496
+      ClientWidth = 691
+      object pnlCadastroBot: TPanel
+        Left = -10
+        Height = 50
+        Top = 404
+        Width = 654
+        Anchors = [akLeft, akRight, akBottom]
+        ClientHeight = 50
+        ClientWidth = 654
+        TabOrder = 0
+        object bitBtnGravar: TBitBtn
+          Left = 19
+          Height = 30
+          Top = 6
+          Width = 75
+          Caption = 'Gravar'
+          TabOrder = 0
+        end
+        object bitBtnExcluir: TBitBtn
+          Left = 119
+          Height = 30
+          Top = 6
+          Width = 75
+          Anchors = [akTop, akLeft, akRight]
+          Caption = 'Excluir'
+          TabOrder = 1
+        end
+        object bitBtnCancelar: TBitBtn
+          Left = 564
+          Height = 30
+          Top = 6
+          Width = 75
+          Anchors = [akTop, akRight]
+          Caption = 'Cancelar'
+          TabOrder = 2
+        end
+      end
+    end
+  end
+  object dsPrincipal: TDataSource
+    Left = 451
+    Top = 134
+  end
+end

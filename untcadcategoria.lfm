@@ -1,0 +1,196 @@
+inherited cadCategoriaF: TcadCategoriaF
+  Left = 584
+  Top = 326
+  Caption = 'Cadastro de categoria'
+  OnClose = FormClose
+  OnShow = FormShow
+  inherited pgcModelo: TPageControl
+    Height = 527
+    Top = 0
+    inherited tbsPesquisa: TTabSheet
+      ClientHeight = 499
+      inherited DBGrid1: TDBGrid
+        Left = -4
+        Height = 350
+        Top = 56
+        Columns = <        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'ID'
+            FieldName = 'categoriaprodutoid'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'Descrição'
+            FieldName = 'ds_categoria_produto'
+          end>
+        DataSource = dsPrincipal
+        OnDblClick = DBGrid1DblClick
+      end
+      inherited pnlPesquiaBot: TPanel
+        Top = 407
+        inherited bitBtnNovo: TBitBtn
+          OnClick = bitBtnNovoClick
+        end
+        inherited bitBtnSair: TBitBtn
+          OnClick = bitBtnSairClick
+        end
+        object bitBtnEditar: TBitBtn[2]
+          Left = 120
+          Height = 30
+          Top = 10
+          Width = 75
+          Caption = 'Editar'
+          OnClick = bitBtnEditarClick
+          TabOrder = 2
+        end
+      end
+      inherited pnlPesquiaTop: TPanel
+        Height = 63
+        ClientHeight = 63
+        inherited spBtnPesquisar: TSpeedButton
+          Left = 126
+          OnClick = spBtnPesquisarClick
+        end
+        object RadioGroup1: TRadioGroup[2]
+          Left = 164
+          Height = 50
+          Top = -4
+          Width = 185
+          AutoFill = True
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 3
+          ClientHeight = 30
+          ClientWidth = 181
+          Columns = 3
+          Items.Strings = (
+            'ID'
+            'Nome'
+            'Todos'
+          )
+          TabOrder = 1
+        end
+      end
+    end
+    inherited tbsCadastro: TTabSheet
+      ClientHeight = 499
+      inherited pnlCadastroBot: TPanel
+        Top = 407
+        inherited bitBtnGravar: TBitBtn
+          OnClick = bitBtnGravarClick
+        end
+        inherited bitBtnExcluir: TBitBtn
+          Left = 116
+          OnClick = bitBtnExcluirClick
+        end
+        inherited bitBtnCancelar: TBitBtn
+          OnClick = bitBtnCancelarClick
+        end
+      end
+      object DBEdit1: TDBEdit[1]
+        Left = 41
+        Height = 23
+        Top = 56
+        Width = 80
+        DataField = 'categoriaprodutoid'
+        DataSource = dsPrincipal
+        Alignment = taRightJustify
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object Label1: TLabel[2]
+        Left = 41
+        Height = 20
+        Top = 31
+        Width = 15
+        Caption = 'ID'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit2: TDBEdit[3]
+        Left = 41
+        Height = 23
+        Top = 119
+        Width = 132
+        DataField = 'ds_categoria_produto'
+        DataSource = dsPrincipal
+        MaxLength = 50
+        TabOrder = 2
+      end
+      object Label2: TLabel[4]
+        Left = 41
+        Height = 21
+        Top = 97
+        Width = 67
+        Caption = 'Descrição'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBNavigator1: TDBNavigator[5]
+        Left = 223
+        Height = 25
+        Top = 31
+        Width = 241
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 25
+        ClientWidth = 241
+        DataSource = dsPrincipal
+        Options = []
+        TabOrder = 3
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      end
+    end
+  end
+  inherited dsPrincipal: TDataSource
+    DataSet = qryCadCategoria
+    Left = 570
+    Top = 173
+  end
+  object qryCadCategoria: TZQuery[2]
+    OnNewRecord = qryCadCategoriaNewRecord
+    SQL.Strings = (
+      'select * from categoria_produto'
+    )
+    Params = <>
+    Left = 536
+    Top = 96
+    object qryCadCategoriacategoriaprodutoid: TLongintField
+      FieldKind = fkData
+      FieldName = 'categoriaprodutoid'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryCadCategoriads_categoria_produto: TStringField
+      FieldKind = fkData
+      FieldName = 'ds_categoria_produto'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 50
+    end
+  end
+end

@@ -1,0 +1,238 @@
+object addItemF: TaddItemF
+  Left = 791
+  Height = 323
+  Top = 361
+  Width = 493
+  Caption = 'Adicionar item'
+  ClientHeight = 0
+  ClientWidth = 0
+  OnClose = FormClose
+  LCLVersion = '2.2.6.0'
+  object DBEdit1: TDBEdit
+    Left = 56
+    Height = 23
+    Top = 51
+    Width = 55
+    DataField = 'produtoid'
+    DataSource = dsPesqProd
+    ReadOnly = True
+    Alignment = taRightJustify
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object DBEdit2: TDBEdit
+    Left = 56
+    Height = 23
+    Top = 118
+    Width = 56
+    DataField = 'categoriaprodutoid'
+    DataSource = dsPesqProd
+    ReadOnly = True
+    Alignment = taRightJustify
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object DBEdit3: TDBEdit
+    Left = 196
+    Height = 23
+    Top = 51
+    Width = 115
+    DataField = 'ds_produto'
+    DataSource = dsPesqProd
+    ReadOnly = True
+    MaxLength = 50
+    TabOrder = 4
+  end
+  object DBEdit4: TDBEdit
+    Left = 195
+    Height = 23
+    Top = 118
+    Width = 115
+    DataField = 'obs_produto'
+    DataSource = dsPesqProd
+    ReadOnly = True
+    MaxLength = 300
+    TabOrder = 5
+  end
+  object dbEdtValorProd: TDBEdit
+    Left = 348
+    Height = 23
+    Top = 51
+    Width = 80
+    DataField = 'vl_venda_produto'
+    DataSource = dsPesqProd
+    ReadOnly = True
+    Alignment = taRightJustify
+    MaxLength = 0
+    TabOrder = 6
+  end
+  object DBEdit6: TDBEdit
+    Left = 348
+    Height = 23
+    Top = 118
+    Width = 80
+    DataField = 'status_produto'
+    DataSource = dsPesqProd
+    MaxLength = 10
+    TabOrder = 7
+  end
+  object Label1: TLabel
+    Left = 59
+    Height = 20
+    Top = 30
+    Width = 15
+    Caption = 'ID'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -15
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 59
+    Height = 21
+    Top = 92
+    Width = 81
+    Caption = 'Id categoria'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 195
+    Height = 21
+    Top = 29
+    Width = 67
+    Caption = 'Descrição'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 195
+    Height = 21
+    Top = 92
+    Width = 81
+    Caption = 'Obserações'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 348
+    Height = 21
+    Top = 29
+    Width = 36
+    Caption = 'Valor'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 350
+    Height = 21
+    Top = 92
+    Width = 42
+    Caption = 'Status'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 56
+    Height = 21
+    Top = 167
+    Width = 81
+    Caption = 'Quantidade'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object edtValorF: TEdit
+    Left = 195
+    Height = 23
+    Top = 192
+    Width = 80
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object Label8: TLabel
+    Left = 196
+    Height = 21
+    Top = 167
+    Width = 70
+    Caption = 'Valor final'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object btnInserir: TButton
+    Left = 36
+    Height = 25
+    Top = 280
+    Width = 75
+    Caption = 'Inserir'
+    OnClick = btnInserirClick
+    TabOrder = 8
+  end
+  object btnCancelar: TButton
+    Left = 137
+    Height = 25
+    Top = 280
+    Width = 75
+    Caption = 'Cancelar'
+    OnClick = btnCancelarClick
+    TabOrder = 9
+  end
+  object btnPesqProd: TButton
+    Left = 331
+    Height = 25
+    Top = 190
+    Width = 108
+    Caption = 'Procurar produto'
+    OnClick = btnPesqProdClick
+    TabOrder = 10
+  end
+  object edtQnt: TEdit
+    Left = 58
+    Height = 23
+    Top = 192
+    Width = 53
+    OnExit = edtQntExit
+    TabOrder = 0
+    Text = '1'
+  end
+  object dsPesqProd: TDataSource
+    DataSet = DataModule1.qryPesqProds
+    OnDataChange = dsPesqProdDataChange
+    Left = 391
+    Top = 232
+  end
+  object dsAddItemOrc: TDataSource
+    DataSet = DataModule1.qryOrcItens
+    Left = 309
+    Top = 232
+  end
+end

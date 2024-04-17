@@ -1,0 +1,468 @@
+inherited cadProdutoF: TcadProdutoF
+  Left = 604
+  Top = 283
+  Width = 1073
+  Caption = 'Cadastro de Produto'
+  ClientWidth = 1073
+  OnShow = FormShow
+  inherited pgcModelo: TPageControl
+    Top = 0
+    Width = 1119
+    ActivePage = tbsCadastro
+    TabIndex = 1
+    inherited tbsPesquisa: TTabSheet
+      ClientWidth = 1111
+      OnContextPopup = tbsPesquisaContextPopup
+      inherited DBGrid1: TDBGrid
+        Left = -4
+        Height = 356
+        Top = 50
+        Width = 1070
+        AutoFillColumns = True
+        Columns = <        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'ID'
+            Width = 148
+            FieldName = 'produtoid'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'Id da categoria'
+            Width = 148
+            FieldName = 'categoriaprodutoid'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'Valor de venda'
+            Width = 148
+            FieldName = 'vl_venda_produto'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'Data de cadastro'
+            Width = 148
+            FieldName = 'dt_cadastro_produto'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'Status'
+            Width = 148
+            FieldName = 'status_produto'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'Descrição'
+            Width = 148
+            FieldName = 'ds_produto'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'Observação'
+            Width = 149
+            FieldName = 'obs_produto'
+          end>
+        DataSource = dsPrincipal
+        OnDblClick = DBGrid1DblClick
+      end
+      inherited pnlPesquiaBot: TPanel
+        Height = 54
+        Width = 1074
+        ClientHeight = 54
+        ClientWidth = 1074
+        inherited bitBtnNovo: TBitBtn
+          OnClick = bitBtnNovoClick
+        end
+        inherited bitBtnSair: TBitBtn
+          Left = 979
+          OnClick = bitBtnSairClick
+        end
+        object bitBtnEditar: TBitBtn[2]
+          Left = 118
+          Height = 30
+          Top = 10
+          Width = 75
+          Caption = 'Editar'
+          OnClick = bitBtnEditarClick
+          TabOrder = 2
+        end
+      end
+      inherited pnlPesquiaTop: TPanel
+        Left = -4
+        Width = 1074
+        ClientWidth = 1074
+        inherited edtPesquisa1: TEdit
+          Top = 17
+        end
+        inherited spBtnPesquisar: TSpeedButton
+          Left = 128
+          Top = 17
+          OnClick = spBtnPesquisarClick
+        end
+        object RadioGroup1: TRadioGroup[2]
+          Left = 170
+          Height = 39
+          Top = 1
+          Width = 738
+          AutoFill = True
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 7
+          ClientHeight = 19
+          ClientWidth = 734
+          Columns = 7
+          Items.Strings = (
+            'Id'
+            'Id categoria'
+            'Valor de venda (máximo)'
+            'Valor de venda (minímo)'
+            'Data cadastro'
+            'Status'
+            'Todos'
+          )
+          TabOrder = 1
+        end
+      end
+    end
+    inherited tbsCadastro: TTabSheet
+      ClientWidth = 1111
+      inherited pnlCadastroBot: TPanel
+        Width = 1074
+        ClientWidth = 1074
+        inherited bitBtnGravar: TBitBtn
+          OnClick = bitBtnGravarClick
+        end
+        inherited bitBtnExcluir: TBitBtn
+          AnchorSideRight.Side = asrCenter
+          AnchorSideBottom.Side = asrCenter
+          Left = 115
+          Width = 86
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          OnClick = bitBtnExcluirClick
+        end
+        inherited bitBtnCancelar: TBitBtn
+          Left = 984
+          OnClick = bitBtnCancelarClick
+        end
+      end
+      object DBEdit1: TDBEdit[1]
+        Left = 86
+        Height = 23
+        Top = 42
+        Width = 80
+        DataField = 'produtoid'
+        DataSource = dsPrincipal
+        ReadOnly = True
+        Alignment = taRightJustify
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object Label1: TLabel[2]
+        Left = 86
+        Height = 20
+        Top = 18
+        Width = 15
+        Caption = 'ID'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label2: TLabel[3]
+        Left = 86
+        Height = 20
+        Top = 82
+        Width = 82
+        Caption = 'ID categoria'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit3: TDBEdit[4]
+        Left = 271
+        Height = 23
+        Top = 294
+        Width = 164
+        DataField = 'ds_produto'
+        DataSource = dsPrincipal
+        MaxLength = 50
+        TabOrder = 2
+      end
+      object DBEdit4: TDBEdit[5]
+        Left = 271
+        Height = 23
+        Top = 42
+        Width = 146
+        DataField = 'obs_produto'
+        DataSource = dsPrincipal
+        MaxLength = 300
+        TabOrder = 3
+      end
+      object DBEdit5: TDBEdit[6]
+        Left = 270
+        Height = 23
+        Top = 112
+        Width = 81
+        DataField = 'vl_venda_produto'
+        DataSource = dsPrincipal
+        Alignment = taRightJustify
+        MaxLength = 0
+        TabOrder = 4
+      end
+      object Label3: TLabel[7]
+        Left = 271
+        Height = 20
+        Top = 262
+        Width = 65
+        Caption = 'Descrição'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label4: TLabel[8]
+        Left = 271
+        Height = 20
+        Top = 18
+        Width = 78
+        Caption = 'Observação'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label5: TLabel[9]
+        Left = 271
+        Height = 20
+        Top = 82
+        Width = 99
+        Caption = 'Valor de venda'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label7: TLabel[10]
+        Left = 433
+        Height = 20
+        Top = 18
+        Width = 40
+        Caption = 'Status'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBComboBox1: TDBComboBox[11]
+        Left = 433
+        Height = 23
+        Top = 42
+        Width = 66
+        DataField = 'status_produto'
+        DataSource = dsPrincipal
+        ItemHeight = 15
+        Items.Strings = (
+          'ATIVO'
+          'INATIVO'
+        )
+        MaxLength = 0
+        TabOrder = 5
+      end
+      object DBEdit6: TDBEdit[12]
+        Left = 271
+        Height = 23
+        Top = 200
+        Width = 80
+        DataField = 'dt_cadastro_produto'
+        DataSource = dsPrincipal
+        ReadOnly = True
+        MaxLength = 0
+        TabOrder = 6
+      end
+      object Label8: TLabel[13]
+        Left = 271
+        Height = 20
+        Top = 174
+        Width = 114
+        Caption = 'Data de cadastro'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBNavigator1: TDBNavigator[14]
+        Left = 559
+        Height = 25
+        Top = 42
+        Width = 241
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 25
+        ClientWidth = 241
+        DataSource = dsPrincipal
+        Options = []
+        TabOrder = 7
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      end
+      object DBGrid2: TDBGrid[15]
+        Left = 86
+        Height = 164
+        Top = 152
+        Width = 124
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'ID'
+            FieldName = 'categoriaprodutoid'
+          end>
+        DataSource = dsIDCategoria
+        TabOrder = 8
+      end
+      object DBEdit2: TDBEdit[16]
+        Left = 86
+        Height = 23
+        Top = 112
+        Width = 80
+        DataField = 'categoriaprodutoid'
+        DataSource = dsIDCategoria
+        ReadOnly = True
+        Alignment = taRightJustify
+        MaxLength = 0
+        TabOrder = 9
+      end
+    end
+  end
+  object Label6: TLabel[1]
+    Left = 270
+    Height = 20
+    Top = 148
+    Width = 115
+    Caption = 'Data do cadastro'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -15
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  inherited dsPrincipal: TDataSource[2]
+    DataSet = qryCadProd
+    Left = 738
+    Top = 225
+  end
+  object qryCadProd: TZQuery[3]
+    Connection = DataModule1.ZConnection1
+    OnNewRecord = qryCadProdNewRecord
+    SQL.Strings = (
+      'select * from produto'
+    )
+    Params = <>
+    Left = 824
+    Top = 225
+    object qryCadProdprodutoid: TLongintField
+      FieldKind = fkData
+      FieldName = 'produtoid'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryCadProdcategoriaprodutoid: TLongintField
+      FieldKind = fkData
+      FieldName = 'categoriaprodutoid'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryCadProdds_produto: TStringField
+      FieldKind = fkData
+      FieldName = 'ds_produto'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 50
+    end
+    object qryCadProdobs_produto: TStringField
+      FieldKind = fkData
+      FieldName = 'obs_produto'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 300
+    end
+    object qryCadProdvl_venda_produto: TFloatField
+      FieldKind = fkData
+      FieldName = 'vl_venda_produto'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Precision = 983042
+    end
+    object qryCadProddt_cadastro_produto: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'dt_cadastro_produto'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryCadProdstatus_produto: TStringField
+      FieldKind = fkData
+      FieldName = 'status_produto'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 10
+    end
+  end
+  object qryIDCategoria: TZQuery[4]
+    Connection = DataModule1.ZConnection1
+    SQL.Strings = (
+      'select categoriaprodutoid from categoria_produto'
+    )
+    Params = <>
+    Left = 824
+    Top = 304
+  end
+  object dsIDCategoria: TDataSource[5]
+    DataSet = qryIDCategoria
+    Left = 738
+    Top = 304
+  end
+end

@@ -1,0 +1,265 @@
+inherited cadUsuarioF: TcadUsuarioF
+  Left = 604
+  Top = 283
+  Caption = 'Cadastro de usuários'
+  OnClose = FormClose
+  OnShow = FormShow
+  inherited pgcModelo: TPageControl
+    inherited tbsPesquisa: TTabSheet
+      inherited DBGrid1: TDBGrid
+        Left = -4
+        Columns = <        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'ID'
+            FieldName = 'id'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'Usuário'
+            FieldName = 'usuario'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'Nome completo'
+            FieldName = 'nome_completo'
+          end>
+        DataSource = dsPrincipal
+        OnDblClick = DBGrid1DblClick
+      end
+      inherited pnlPesquiaBot: TPanel
+        inherited bitBtnNovo: TBitBtn
+          OnClick = bitBtnNovoClick
+        end
+        inherited bitBtnSair: TBitBtn
+          OnClick = bitBtnSairClick
+        end
+        object bitBtnEditar: TBitBtn[2]
+          Left = 115
+          Height = 30
+          Top = 10
+          Width = 75
+          Anchors = [akTop, akLeft, akRight]
+          Caption = 'Editar'
+          OnClick = bitBtnEditarClick
+          TabOrder = 2
+        end
+      end
+      inherited pnlPesquiaTop: TPanel
+        inherited edtPesquisa1: TEdit
+          Left = 63
+          Top = 19
+        end
+        inherited spBtnPesquisar: TSpeedButton
+          Left = 23
+          OnClick = spBtnPesquisarClick
+        end
+        object RadioGroup1: TRadioGroup[2]
+          Left = 172
+          Height = 37
+          Top = 4
+          Width = 279
+          AutoFill = True
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 4
+          ClientHeight = 17
+          ClientWidth = 275
+          Columns = 4
+          Items.Strings = (
+            'ID'
+            'Usuário'
+            'Nome completo'
+            'Todos'
+          )
+          TabOrder = 1
+        end
+      end
+    end
+    inherited tbsCadastro: TTabSheet
+      inherited pnlCadastroBot: TPanel
+        inherited bitBtnGravar: TBitBtn
+          OnClick = bitBtnGravarClick
+        end
+        inherited bitBtnExcluir: TBitBtn
+          Left = 111
+          OnClick = bitBtnExcluirClick
+        end
+        inherited bitBtnCancelar: TBitBtn
+          OnClick = bitBtnCancelarClick
+        end
+      end
+      object DBEdit1: TDBEdit[1]
+        Left = 89
+        Height = 23
+        Top = 122
+        Width = 80
+        DataField = 'id'
+        DataSource = dsPrincipal
+        ReadOnly = True
+        Alignment = taRightJustify
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object DBEdit2: TDBEdit[2]
+        Left = 89
+        Height = 23
+        Top = 202
+        Width = 80
+        DataField = 'usuario'
+        DataSource = dsPrincipal
+        MaxLength = 30
+        TabOrder = 2
+      end
+      object DBEdit3: TDBEdit[3]
+        Left = 257
+        Height = 23
+        Top = 122
+        Width = 112
+        DataField = 'nome_completo'
+        DataSource = dsPrincipal
+        MaxLength = 60
+        TabOrder = 3
+      end
+      object DBEdit4: TDBEdit[4]
+        Left = 257
+        Height = 23
+        Top = 202
+        Width = 80
+        DataField = 'senha'
+        DataSource = dsPrincipal
+        MaxLength = 50
+        TabOrder = 4
+      end
+      object Label1: TLabel[5]
+        Left = 89
+        Height = 21
+        Top = 91
+        Width = 15
+        Caption = 'ID'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label2: TLabel[6]
+        Left = 89
+        Height = 20
+        Top = 174
+        Width = 50
+        Caption = 'Usuário'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label3: TLabel[7]
+        Left = 257
+        Height = 20
+        Top = 91
+        Width = 109
+        Caption = 'Nome completo'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label4: TLabel[8]
+        Left = 257
+        Height = 20
+        Top = 174
+        Width = 40
+        Caption = 'Senha'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBNavigator1: TDBNavigator[9]
+        Left = 96
+        Height = 25
+        Top = 39
+        Width = 241
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 25
+        ClientWidth = 241
+        DataSource = dsPrincipal
+        Options = []
+        TabOrder = 5
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      end
+    end
+  end
+  inherited dsPrincipal: TDataSource
+    DataSet = qryCadUsuario
+    Left = 554
+    Top = 187
+  end
+  object qryCadUsuario: TZQuery[2]
+    Connection = DataModule1.ZConnection1
+    OnNewRecord = qryCadUsuarioNewRecord
+    SQL.Strings = (
+      'select * from usuarios'
+    )
+    Params = <>
+    Left = 554
+    Top = 105
+    object qryCadUsuarioid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryCadUsuariousuario: TStringField
+      FieldKind = fkData
+      FieldName = 'usuario'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryCadUsuarionome_completo: TStringField
+      FieldKind = fkData
+      FieldName = 'nome_completo'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryCadUsuariosenha: TStringField
+      FieldKind = fkData
+      FieldName = 'senha'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+  end
+end
